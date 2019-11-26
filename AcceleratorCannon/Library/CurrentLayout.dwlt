@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 398}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_MinSize: {x: 479, y: 348}
   m_MaxSize: {x: 14004, y: 14048}
   vertical: 1
-  controlID: 62
+  controlID: 43
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_MinSize: {x: 479, y: 348}
   m_MaxSize: {x: 14004, y: 14048}
   vertical: 0
-  controlID: 63
+  controlID: 44
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -160,14 +160,14 @@ MonoBehaviour:
     height: 948
   m_MinSize: {x: 202, y: 224}
   m_MaxSize: {x: 4002, y: 4024}
-  m_ActualView: {fileID: 13}
+  m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
   - {fileID: 13}
   - {fileID: 15}
   - {fileID: 11}
-  m_Selected: 1
-  m_LastSelected: 2
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_MinSize: {x: 277, y: 348}
   m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
-  controlID: 64
+  controlID: 31
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -348,7 +348,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -524,19 +524,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets
   m_ViewMode: 0
   m_StartGridSize: 69
   m_LastFolders: []
   m_LastFoldersGridSize: 69
-  m_LastProjectPath: C:\Users\halo2\Desktop\p\AcceleratorCannon
+  m_LastProjectPath: C:\Users\halo2\Desktop\Q\RWM1920-C00213034\AcceleratorCannon
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: ca2e0000
     m_LastClickedID: 11978
-    m_ExpandedIDs: 00000000fe270000282800009e2800001c2900008e290000e0290000202a0000
+    m_ExpandedIDs: 00000000003000002630000086300000d83000003e31000074310000a0310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -564,21 +564,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000fe270000282800009e2800001c2900008e290000e0290000202a0000
+    m_ExpandedIDs: ffffffff00000000003000002630000086300000d83000003e31000074310000a0310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Example Scene
+      m_OriginalName: Example Scene
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 12606
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
@@ -650,7 +650,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: b2fbffff
+      m_ExpandedIDs: 32f6ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
