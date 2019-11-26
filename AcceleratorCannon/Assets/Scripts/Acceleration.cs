@@ -24,20 +24,23 @@ public class Acceleration : MonoBehaviour
         {
             Vector2 newSpeed = new Vector2(Mathf.Cos(Mathf.Deg2Rad * angle) * speed, Mathf.Sin(Mathf.Deg2Rad * angle) * speed);
 
-            player.GetComponent<PlayerValues>().velocity += newSpeed;
+            player.GetComponent<Rigidbody2D>().velocity += newSpeed;
         }
 
         if (player.GetComponent<PlayerValues>().decelerate == true)
         {
             Vector2 newSpeed = new Vector2(Mathf.Cos(Mathf.Deg2Rad * angle), Mathf.Sin(Mathf.Deg2Rad * angle) * -speed);
 
-            player.GetComponent<PlayerValues>().velocity.y += newSpeed.y;
+            player.GetComponent<Rigidbody2D>().velocity = new Vector2(player.GetComponent<Rigidbody2D>().velocity.x, player.GetComponent<Rigidbody2D>().velocity.y + newSpeed.y);
         }
+        Debug.Log(player.GetComponent<Rigidbody2D>().velocity);
     }
 
     public void correctVelocity()
     {
-        float mag = player.GetComponent<PlayerValues>().velocity.magnitude;
-        player.GetComponent<PlayerValues>().velocity = new Vector2(Mathf.Cos(Mathf.Deg2Rad * angle) * mag, Mathf.Sin(Mathf.Deg2Rad * angle) * mag);
+        float mag = player.GetComponent<Rigidbody2D>().velocity.magnitude;
+        Debug.Log(mag);
+        player.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(Mathf.Deg2Rad * angle) * mag, Mathf.Sin(Mathf.Deg2Rad * angle) * mag);
+        Debug.Log(player.GetComponent<Rigidbody2D>().velocity);
     }
 }
