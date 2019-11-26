@@ -67,9 +67,10 @@ public class PlayerValues : MonoBehaviour
             }
         }
         rb2D.MovePosition(rb2D.position + velocity * Time.fixedDeltaTime);
+        
     }
 
-    void OnTriggerEnter2D(Collider2D collider)
+    void OnCollisionEnter2D(Collision2D collider)
     {
         decelerate = false;
     }
