@@ -9,38 +9,41 @@ public class Acceleration : MonoBehaviour
     float angle;
     float speed;
 
+    public bool accelerate = false;
+    public bool decelerate = false;
+
     // Start is called before the first frame update
     void Start()
     {
         angle = transform.rotation.eulerAngles.z - 90;
         speed = 2.0f;
-        Debug.Log(angle);
+        //Debug.Log(angle);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(player.GetComponent<PlayerValues>().accelerated == true)
+        if(accelerate == true)
         {
             Vector2 newSpeed = new Vector2(Mathf.Cos(Mathf.Deg2Rad * angle) * speed, Mathf.Sin(Mathf.Deg2Rad * angle) * speed);
 
             player.GetComponent<Rigidbody2D>().velocity += newSpeed;
         }
 
-        if (player.GetComponent<PlayerValues>().decelerate == true)
+        if (decelerate == true)
         {
             Vector2 newSpeed = new Vector2(Mathf.Cos(Mathf.Deg2Rad * angle), Mathf.Sin(Mathf.Deg2Rad * angle) * -speed);
 
             player.GetComponent<Rigidbody2D>().velocity = new Vector2(player.GetComponent<Rigidbody2D>().velocity.x, player.GetComponent<Rigidbody2D>().velocity.y + newSpeed.y);
         }
-        Debug.Log(player.GetComponent<Rigidbody2D>().velocity);
+       // Debug.Log(player.GetComponent<Rigidbody2D>().velocity);
     }
 
     public void correctVelocity()
     {
         float mag = player.GetComponent<Rigidbody2D>().velocity.magnitude;
-        Debug.Log(mag);
+        //Debug.Log(mag);
         player.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(Mathf.Deg2Rad * angle) * mag, Mathf.Sin(Mathf.Deg2Rad * angle) * mag);
-        Debug.Log(player.GetComponent<Rigidbody2D>().velocity);
+        //Debug.Log(player.GetComponent<Rigidbody2D>().velocity);
     }
 }
