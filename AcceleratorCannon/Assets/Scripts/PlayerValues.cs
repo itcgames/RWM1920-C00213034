@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerValues : MonoBehaviour
 {
     float speed = 2.0f;
-    public bool accelerated = false;
-    public bool decelerate = false;
+    public float saveY;
+    //public bool accelerated = false;
+    //public bool decelerate = false;
 
     public Vector2 velocity = new Vector2(0,0);
 
@@ -15,7 +16,8 @@ public class PlayerValues : MonoBehaviour
     void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
-        rb2D.velocity = new Vector2(10.0f, 0);
+        rb2D.velocity = new Vector2(-3.0f, 0);
+        saveY = rb2D.velocity.y;
     }
 
     private void Start()
@@ -26,11 +28,11 @@ public class PlayerValues : MonoBehaviour
     void Update()
     {
         rb2D.MovePosition(rb2D.position + rb2D.velocity * Time.fixedDeltaTime);
-        
+        //Debug.Log(rb2D.velocity);
     }
 
     void OnCollisionEnter2D(Collision2D collider)
     {
-        decelerate = false;
+        //decelerate = false;
     }
 }

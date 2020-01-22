@@ -19,17 +19,16 @@ public class Rotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(DragIcon.GetComponent<CheckForClick>().m_drag == true)
+        if (DragIcon.GetComponent<CheckForClickAngle>().m_drag == true)
         {
             currentAngle = Mathf.Round(transform.rotation.eulerAngles.z);
 
-            Vector3 direction = (RotateAround.transform.position) - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 100));
-            Vector3 cameraPos = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
-            float targetAngle = Mathf.Rad2Deg * Mathf.Atan2(RotateAround.transform.position.x - cameraPos.x, RotateAround.transform.position.y - cameraPos.y);
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+            float targetAngle = Mathf.Rad2Deg * Mathf.Atan2(RotateAround.transform.position.x - mousePos.x, RotateAround.transform.position.y - mousePos.y);
 
             Debug.Log(targetAngle + " " + transform.rotation.eulerAngles.z);
 
-            if(targetAngle < 0)
+            if (targetAngle < 0)
             {
                 targetAngle = targetAngle * -1;
             }
@@ -41,9 +40,9 @@ public class Rotation : MonoBehaviour
             //Debug.Log(targetAngle + " " + transform.rotation.eulerAngles.z);
 
             float angleDifferenceForward = targetAngle - transform.rotation.eulerAngles.z;
-            float angleDifferenceBack =  transform.rotation.eulerAngles.z - targetAngle;
+            float angleDifferenceBack = transform.rotation.eulerAngles.z - targetAngle;
 
-            if(angleDifferenceForward < 0)
+            if (angleDifferenceForward < 0)
             {
                 angleDifferenceForward = 360 + angleDifferenceForward;
             }
@@ -68,7 +67,7 @@ public class Rotation : MonoBehaviour
                         Vector3.forward,
                         10 * Time.deltaTime);
                 }
-                else if(
+                else if (
                     angleDifferenceForward > angleDifferenceBack
                     &&
                     currentAngle != originalAngle - 30)
