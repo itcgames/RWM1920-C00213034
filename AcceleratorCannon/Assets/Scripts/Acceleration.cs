@@ -34,6 +34,9 @@ public class Acceleration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        angle = transform.rotation.eulerAngles.z - 90;
+
+
         if (accelerate == true)
         {
             Vector2 newSpeed = new Vector2(Mathf.Cos(Mathf.Deg2Rad * angle) * speed, Mathf.Sin(Mathf.Deg2Rad * angle) * speed);
