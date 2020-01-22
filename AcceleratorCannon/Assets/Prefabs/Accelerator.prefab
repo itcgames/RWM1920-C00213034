@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 529217298788126910}
   - component: {fileID: 3775587925595813171}
   m_Layer: 0
-  m_Name: Accelerator 1
+  m_Name: Accelerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -676,6 +676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 529217298788126896}
+  startObject: {fileID: 529217297840594784}
 --- !u!1 &529217299468744361
 GameObject:
   m_ObjectHideFlags: 0

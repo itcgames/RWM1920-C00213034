@@ -5,11 +5,10 @@ using UnityEngine;
 public class EndAcceleration : MonoBehaviour
 {
     public GameObject controller;
-    GameObject startObject;
+    public GameObject startObject;
     // Start is called before the first frame update
     void Start()
     {
-        startObject = GameObject.Find("Start");
     }
 
     // Update is called once per frame
