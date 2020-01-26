@@ -26,7 +26,7 @@ public class Rotation : MonoBehaviour
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
             float targetAngle = Mathf.Rad2Deg * Mathf.Atan2(RotateAround.transform.position.x - mousePos.x, RotateAround.transform.position.y - mousePos.y);
 
-            Debug.Log(targetAngle + " " + transform.rotation.eulerAngles.z);
+            //Debug.Log(targetAngle + " " + transform.rotation.eulerAngles.z);
 
             if (targetAngle < 0)
             {
@@ -58,6 +58,7 @@ public class Rotation : MonoBehaviour
 
             if (Mathf.Round(transform.rotation.eulerAngles.z) != Mathf.Round(targetAngle))
             {
+
                 if (angleDifferenceForward < angleDifferenceBack
                     &&
                     currentAngle != originalAngle + 30)
@@ -77,6 +78,8 @@ public class Rotation : MonoBehaviour
                         Vector3.back,
                         10 * Time.deltaTime);
                 }
+
+                gameObject.GetComponent<Acceleration>().setOriginalSliderPosition();
             }
         }
     }

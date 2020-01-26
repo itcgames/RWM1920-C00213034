@@ -19,7 +19,7 @@ public class StartAcceleration : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.CompareTag("Wall") == false && controller.GetComponent<Acceleration>().accelerate == false)
+        if (collider.CompareTag("Wall") == false && collider.CompareTag("Floor") == false && controller.GetComponent<Acceleration>().accelerate == false)
         {
             controller.GetComponent<Acceleration>().setObject(collider.gameObject);
             controller.GetComponent<Acceleration>().accelerate = true;
@@ -32,7 +32,7 @@ public class StartAcceleration : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collider)
     {
-        if (collider.CompareTag("Wall") == false && controller.GetComponent<Acceleration>().accelerate == false)
+        if (collider.CompareTag("Wall") == false && collider.CompareTag("Floor") == false && controller.GetComponent<Acceleration>().accelerate == false)
         {
             controller.GetComponent<Acceleration>().setObject(collider.gameObject);
             controller.GetComponent<Acceleration>().accelerate = true;

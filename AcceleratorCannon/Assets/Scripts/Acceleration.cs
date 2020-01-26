@@ -20,7 +20,7 @@ public class Acceleration : MonoBehaviour
 
     float distance = 0;
 
-    Vector3 originalPosition;
+    public Vector3 originalSliderPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -28,14 +28,14 @@ public class Acceleration : MonoBehaviour
         angle = transform.rotation.eulerAngles.z - 90;
         speed = 0.75f;
         baseSpeed = speed;
-        originalPosition = m_slider.transform.position;
+        originalSliderPosition = m_slider.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
         angle = transform.rotation.eulerAngles.z - 90;
-
+        Debug.Log(originalSliderPosition + " " + m_slider.transform.position);
 
         if (accelerate == true)
         {
@@ -43,13 +43,6 @@ public class Acceleration : MonoBehaviour
 
             player.GetComponent<Rigidbody2D>().velocity += newSpeed;
         }
-
-        //if (decelerate == true)
-        //{
-        //    Vector2 newSpeed = new Vector2(Mathf.Cos(Mathf.Deg2Rad * angle), Mathf.Sin(Mathf.Deg2Rad * angle) * -speed);
-
-        //    player.GetComponent<Rigidbody2D>().velocity = new Vector2(player.GetComponent<Rigidbody2D>().velocity.x, player.GetComponent<Rigidbody2D>().velocity.y + newSpeed.y);
-        //}
 
         if (m_slider.GetComponent<CheckForClickAccel>().m_drag == true)
         {
@@ -68,14 +61,14 @@ public class Acceleration : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
         angleToSlider = Mathf.Round(Mathf.Rad2Deg * Mathf.Atan2(m_slider.transform.position.y - mousePos.y, m_slider.transform.position.x - mousePos.x) - transform.rotation.eulerAngles.z);
         
-        distance =Mathf.Round((1000 * Vector3.Distance(originalPosition, m_slider.transform.position)) / 7) / 100;
+        distance =Mathf.Round((1000 * Vector3.Distance(originalSliderPosition, m_slider.transform.position)) / 7) / 100;
 
         if(angleToSlider < -180)
         {
             angleToSlider = angleToSlider + 360;
         }
 
-        angleToOriginalPos = Mathf.Round(Mathf.Rad2Deg * Mathf.Atan2(m_slider.transform.position.y - originalPosition.y, m_slider.transform.position.x - originalPosition.x) - transform.rotation.eulerAngles.z);
+        angleToOriginalPos = Mathf.Round(Mathf.Rad2Deg * Mathf.Atan2(m_slider.transform.position.y - originalSliderPosition.y, m_slider.transform.position.x - originalSliderPosition.x) - transform.rotation.eulerAngles.z);
         if (angleToOriginalPos < -180)
         {
             angleToOriginalPos = angleToOriginalPos + 360;
@@ -85,6 +78,9 @@ public class Acceleration : MonoBehaviour
         {
             distance = distance * -1;
         }
+
+        Debug.Log(distance);
+
         //Debug.Log(angleToOriginalPos);
 
         if ((angleToSlider < 160 && angleToSlider > 20) || (angleToSlider > -160 && angleToSlider < -20))
@@ -104,7 +100,11 @@ public class Acceleration : MonoBehaviour
 
     public void setObject(GameObject acceleratedObject)
     {
-        Debug.Log(12212);
         player = acceleratedObject;
+    }
+
+    public void setOriginalSliderPosition()
+    {
+
     }
 }
