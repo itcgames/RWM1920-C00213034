@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 529217297506593718}
   m_Layer: 0
   m_Name: Slider
-  m_TagString: Untagged
+  m_TagString: Slider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 8464486840245822616}
   m_Layer: 0
   m_Name: Accelerator
-  m_TagString: Untagged
+  m_TagString: Accelerator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -414,6 +414,7 @@ MonoBehaviour:
   accelerate: 0
   decelerate: 0
   m_slider: {fileID: 529217297506592842}
+  originalSliderPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &3775587925595813171
 MonoBehaviour:
   m_ObjectHideFlags: 0

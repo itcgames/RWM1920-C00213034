@@ -17,7 +17,7 @@ public class StartAcceleration : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D collider)
+    public void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Wall") == false && collider.CompareTag("Floor") == false && controller.GetComponent<Acceleration>().accelerate == false)
         {
@@ -26,11 +26,11 @@ public class StartAcceleration : MonoBehaviour
             controller.GetComponent<Acceleration>().correctVelocity();
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    public void OnTriggerExit2D(Collider2D collision)
     {
         GetComponent<BoxCollider2D>().isTrigger = false;
     }
-    private void OnTriggerStay2D(Collider2D collider)
+    public void OnTriggerStay2D(Collider2D collider)
     {
         if (collider.CompareTag("Wall") == false && collider.CompareTag("Floor") == false && controller.GetComponent<Acceleration>().accelerate == false)
         {

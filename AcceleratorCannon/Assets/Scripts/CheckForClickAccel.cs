@@ -17,12 +17,12 @@ public class CheckForClickAccel : MonoBehaviour
 
     }
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         m_drag = true;
         Debug.Log("Click");
     }
-    private void OnMouseUp()
+    public void OnMouseUp()
     {
         m_drag = false;
     }
